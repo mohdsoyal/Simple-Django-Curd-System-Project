@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Session</title>
+</head>
+<body>
+    
+    <h1>Get Session............{{name}}</h1>
+    <h2>check the session_cookie_age = {{request.session.get_session_cookie_age}}</h2>
+    <h2>check the session Expiry_Age = {{ request.session.get_expiry_age }}</h2>
+    <h2>check the session_expiry_date = {{ request.session.get_expiry_date }}</h2>
+    <h2>check the seesion expire AT the browser close = {{ request.session.get_expire_at_browser_close}}</h2>
+</body>
+</html>

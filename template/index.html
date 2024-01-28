@@ -1,0 +1,56 @@
+{% extends 'home.html' %}
+
+
+{% block contain %}
+<div class="row">
+    <div class="col-4">
+        <h4 class="text-center alert alert-info">Add New Student</h4>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{fm.as_p}}
+
+            <div class="text-center">
+                <input type="submit" class="btn btn-success"> 
+            </div>
+          
+
+        </form>
+    </div>
+    <div class="col-8">
+        <h4 class="text-center alert alert-info">Student Information</h4>
+
+        <table class="table caption-top">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Mobile_No</th>
+                    <th scope="col">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <th scope="row">{{i.id}}</th>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.password}}</td>
+                    <td>{{i.mobile}}</td>
+                    <td><a href="{% url 'update' i.id %}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{% url 'delete' i.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+
+    </div>
+</div>
+{% endblock %}
+
